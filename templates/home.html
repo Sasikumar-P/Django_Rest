@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+{% with contacts=context.values|dictsort:"lname" %}
+<phonebook>
+  {% for contact in contacts %}
+      <contact>
+        <fname>{{ contact.fname }}</fname>
+        <lname>{{ contact.lname }}</lname>
+        <phone_number>{{ contact.phone_number }}</phone_number>
+        <title>{{ contact.title }}</title>
+      </contact>
+  {% endfor %}
+</phonebook>
+{% endwith %}
+
